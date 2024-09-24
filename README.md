@@ -1,5 +1,3 @@
-# Amarachi Elekwa's SQL Portfolio
-Hello, and thanks for stopping by! 
-This repository contains examples of SQL Queries 
-I've written for solo projects and while working through SQL, Data Engineering, and other data analytics courses. 
-Below are a few highlighted projects, Feel free to take a look around and [reach out](http://linkedin.com/in/amarachi-elekwa-754107124)  if you have any feedback or questions.
+SQL Portfolio
+
+This repository showcases my projects aimed at identifying aging and unreconciled General Ledger (GL) balances through applying advanced SQL techniques, including using CASE statements. These queries demonstrate my expertise in performing detailed analyses using table joins, window functions, and PostgreSQL's built-in functions for comprehensive data analysis and reporting.
