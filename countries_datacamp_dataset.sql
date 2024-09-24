@@ -538,6 +538,7 @@ SELECT
     countries.gov_form,
     currencies.curr_code,
     currencies.curr_id,
+    currencies.code,
     economies.income_group,
     economies.year,
     languages.name,
