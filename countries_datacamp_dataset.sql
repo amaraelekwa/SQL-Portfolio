@@ -530,4 +530,21 @@ AND metroarea_pop IS NOT NULL
 ORDER BY city_perc DESC
 LIMIT 10;
 
-
+SELECT 
+    cities.name,
+    countries.region,
+    cities.city_proper_pop,
+    countries.surface_area,
+    countries.gov_form,
+    currencies.curr_code,
+    currencies.curr_id,
+    economies.income_group,
+    economies.year,
+    languages.name,
+    languages.code,
+    languages.official
+FROM cities
+INNER JOIN countries ON cities.country_code = countries.code
+INNER JOIN economies ON economies.code = countries.code
+INNER JOIN languages ON languages.code = cities.country_code
+INNER JOIN currencies ON currencies.code = countries.code;
