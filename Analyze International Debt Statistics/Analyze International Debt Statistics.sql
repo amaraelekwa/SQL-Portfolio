@@ -33,21 +33,21 @@ LIMIT 1;
 SELECT 
     international_debt.country_name,
     international_debt.indicator_name,
-    SUM(economies.gdp_percapita) AS total_gdp
+    MAX(economies.gdp_percapita) AS max_gdp
 FROM international_debt
 INNER JOIN economies ON international_debt.country_code = economies.code
 GROUP BY 
     international_debt.country_name, 
     international_debt.indicator_name
 ORDER BY 
-    total_gdp ASC
+    max_gdp ASC
 LIMIT 1;
 
 /* What country has the lowest income group, grouped by year?*/
-SELECT
-    international_debt.country_name,
-    international_debt.indicator_name,
+SELECT DISTINCT
     economies.year,
+    international_debt.country_name,
+    MIN(economies.gdp_percapita) AS min_gdp,
     SUM(gross_savings) AS total_gross_savings,
     COUNT(income_group) AS no_of_income_group
 FROM international_debt
@@ -55,7 +55,7 @@ INNER JOIN economies ON international_debt.country_code = economies.code
 WHERE income_group = 'Low income'
 GROUP BY 
     international_debt.country_name, 
-    economies.year,
-    international_debt.indicator_name
+    economies.year
 ORDER BY 
-    economies.year ASC
+    min_gdp DESC,
+    economies.year ASC;
