@@ -34,8 +34,7 @@ SELECT
     international_debt.country_name,
     international_debt.indicator_name,
     SUM(economies.gdp_percapita) AS total_gdp
-FROM 
-    international_debt
+FROM international_debt
 INNER JOIN economies ON international_debt.country_code = economies.code
 GROUP BY 
     international_debt.country_name, 
