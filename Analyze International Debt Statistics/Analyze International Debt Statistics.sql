@@ -49,7 +49,7 @@ SELECT DISTINCT
     international_debt.country_name,
     MIN(economies.gdp_percapita) AS min_gdp,
     SUM(gross_savings) AS total_gross_savings,
-    COUNT(income_group) AS no_of_income_group
+    MIN(debt) AS lowest_repayment
 FROM international_debt
 INNER JOIN economies ON international_debt.country_code = economies.code
 WHERE income_group = 'Low income'
