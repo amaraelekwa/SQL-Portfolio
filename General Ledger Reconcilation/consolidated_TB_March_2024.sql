@@ -22,7 +22,7 @@ WITH Consolidated_trial_balance AS (
         ON gl_categories.account_id = account_move_line.account_id_0
     WHERE 
         date BETWEEN '2021-04-30' AND '2024-03-31'
-        AND company_id_1 LIKE '%TD%'
+        AND company_id_1 LIKE '%NGN%'
         AND parent_state = 'posted'
 ),
 YTD_Balance AS ( -- YTD_Balance of each row for year 2024 without adding them
